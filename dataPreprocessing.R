@@ -1,7 +1,5 @@
 # Football Match Result Predictor
 
-print(' I love Italian League Serie-A ')
-
 #read a file and check how can you do the same using function
 
 setwd('C:\\Users\\Rohan Shetty\\Desktop\\FootballDatasets\\Football-Match-Result-Predictor-\\Datasets')
@@ -27,6 +25,24 @@ readNprocessIt <- function(fileName){
 }
 readNprocessIt('SerieA 2017-18.csv')
 
+
+# 2012-13
+readNprocess73 <- function(fileName){
+  rf <- read.csv(fileName)
+  data <- as.data.frame(rf)
+  df <- data[c(-1, -23:-73)]
+  head(df)
+}
+
+readNprocess73('SerieA 2012-13')
+
+
+
+
+
+
+
+
 #comment 1(5:08 PM ) this func works fantastic, customize it according to the files like some have 60+ columns other 70+ so in that way
 
 
@@ -35,7 +51,32 @@ for (i in list1){
   readFile <- read.csv(i)
   dataFrame <- as.data.frame(readFile)
   print(i)
+  print('\\\\\\\\\\\\')
   print(colnames(dataFrame))
+  print('............')
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
