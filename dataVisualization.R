@@ -110,3 +110,42 @@ sayChristopher <- function(){}
 
 
 f1 %>% filter(HomeTeam == 'Lazio' & AwayTeam == 'Roma') %>% summarise(mean(FTHG), mean(FTAG)) 
+
+
+
+
+
+
+
+
+
+
+#-----------------------------------Data Visualization-----------------------------------------
+
+require(ggplot2)
+require(tibble)
+require(esquisse)
+glimpse(SerieA_Data)
+
+#conv some variables to factor form
+
+SerieA_Data$FTAG <- as.factor(SerieA_Data$FTAG)
+SerieA_Data$FTHG <- as.factor(SerieA_Data$FTHG)
+SerieA_Data$HTAG <- as.factor(SerieA_Data$HTAG)
+SerieA_Data$HTHG <- as.factor(SerieA_Data$HTHG)
+
+esquisse::esquisser(SerieA_Data)
+
+
+SerieA_Data <- SerieA_Data %>%
+ filter(!(HTR %in% ""))
+
+library(ggplot2)
+
+ggplot(SerieA_Data) +
+ aes(x = HomeTeam, fill = FTR) +
+ geom_bar() +
+ scale_fill_viridis_d(option = "plasma") +
+ coord_flip() +
+ theme_minimal()
+table(SerieA_Data$HomeTeam, SerieA_Data$FTR)
