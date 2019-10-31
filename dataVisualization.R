@@ -122,6 +122,23 @@ f1 %>% filter(HomeTeam == 'Lazio' & AwayTeam == 'Roma') %>% summarise(mean(FTHG)
 
 #-----------------------------------Data Visualization-----------------------------------------
 
+##  Top 10 teams in Serie A
+# 1. Juventus
+# 2. Napoli
+# 3. Inter Milan
+# 4. AC Milan
+# 5. Roma
+# 6. Lazio
+# 7. Fiorentina
+# 8. Udinese
+# 9. Genoa
+# 10. Sampdoria
+
+
+top10 <- c('Juventus', 'Napoli', 'Inter', 'Milan', 'Roma', 'Lazio', 
+           'Fiorentina', 'Udinese', 'Genoa', 'Atalanta')
+
+
 require(ggplot2)
 require(tibble)
 require(esquisse)
@@ -137,10 +154,10 @@ SerieA_Data$HTHG <- as.factor(SerieA_Data$HTHG)
 esquisse::esquisser(SerieA_Data)
 
 
+# FTR ViSualization( Home Games )
+
 SerieA_Data <- SerieA_Data %>%
  filter(!(HTR %in% ""))
-
-library(ggplot2)
 
 ggplot(SerieA_Data) +
  aes(x = HomeTeam, fill = FTR) +
@@ -149,3 +166,57 @@ ggplot(SerieA_Data) +
  coord_flip() +
  theme_minimal()
 table(SerieA_Data$HomeTeam, SerieA_Data$FTR)
+
+
+
+
+# FTR ViSualization( Away Games )
+SerieA_Data %>%
+  filter(!(HTR %in% "") & FTR == 'A') %>%
+  ggplot(aes(x = AwayTeam)) +
+  geom_bar() +
+  scale_fill_viridis_d(option = "plasma") +
+  coord_flip() +
+  theme_minimal()
+table(SerieA_Data$AwayTeam, SerieA_Data$FTR)
+
+
+
+esquisse::esquisser(SerieA_Data)
+
+# top 10 teams data
+
+topHome <- SerieA_Data %>% filter(HomeTeam %in% top10)#  AwayTeam %in% top10)
+topAway <- SerieA_Data %>% filter(AwayTeam %in% top10)
+esquisse::esquisser(topHome)
+
+homeWins <- topHome %>% filter(FTR == 'H')
+ggplot(homeWins) +
+ aes(x = HomeTeam, fill = FTHG) +
+ geom_bar() +
+ scale_fill_viridis_d(option = "plasma") +
+ coord_flip() +
+ theme_bw() + labs(title = 'HomeWins of Top 10 SerieA Clubs')# + geom_text( label = homeWins$FTHG)
+
+# insight gained
+# 1. Juventus in all asp have been best at home games
+# 2. Napoli, Roma, Inter, Udinese and Fiorentina have done well when they've scored > 1 goal
+# 3. Juventus are top in the list, with Roma, Napoli and Inter in 2nd, 3rd and 4th Position
+# 4. Milan and Fiorentina are kinda similar.
+
+
+
+awayWins <- topAway %>% filter(FTR == 'A' & FTAG != 0)
+ggplot(awayWins) +
+  aes(x = AwayTeam, fill = FTAG) +
+  geom_bar() +
+  scale_fill_viridis_d(option = "plasma") +
+  coord_flip() +
+  theme_bw() + labs(title = 'AwayWins of Top 10 SerieA Clubs')# + geom_text( label = homeWins$FTHG)
+
+
+# insight gained
+# 1. Undoubtedly, Juventus have the best defensive line in SerieA. Inter Milan are the next contenders
+# 2. Roma, Milan and Lazio have good away record with most of the wins(by scoring 2 goals)
+# 3. Juventus, Fiorentina, Napoli and Roma have the best away record( not in terms of no of matches won)
+# 4. Atalanta and Genoa have poor away records.
