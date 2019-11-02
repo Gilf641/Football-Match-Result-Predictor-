@@ -206,6 +206,7 @@ ggplot(homeWins) +
 
 
 
+
 awayWins <- topAway %>% filter(FTR == 'A' & FTAG != 0)
 ggplot(awayWins) +
   aes(x = AwayTeam, fill = FTAG) +
@@ -220,3 +221,43 @@ ggplot(awayWins) +
 # 2. Roma, Milan and Lazio have good away record with most of the wins(by scoring 2 goals)
 # 3. Juventus, Fiorentina, Napoli and Roma have the best away record( not in terms of no of matches won)
 # 4. Atalanta and Genoa have poor away records.
+
+
+# Total Shots
+
+#home shots
+
+hs <-  topHome %>%
+ filter(FTR %in% "H")
+ggplot(hs) +
+ aes(x = HomeTeam, y = HS) +
+ geom_boxplot(fill = "#b3e93e") +
+ theme_minimal()
+
+# # insights
+# 1. Fiorentina, Inter, Juventus and Napoli have almost the same median no of shots at home
+# 2. Roma is leading at the top, whereas Atalanta, Genoa and Udinese have lower percentile of median num of shots at home.
+
+
+
+#home shots on target
+
+hst <-  topHome %>%
+  filter(FTR %in% "H")
+ggplot(hst) +
+  aes(x = HomeTeam, y = HST) +
+  geom_boxplot(fill = "#b3e93e") +
+  theme_minimal()
+
+# same insights but 
+ # share some insights related to IQR's
+
+head(SerieA_Data)
+
+
+# Yellow cards
+str(SerieA_Data)
+
+esquisse::esquisser(SerieA_Data)
+
+
