@@ -32,3 +32,19 @@ for (i in length(home)){
   }
 }
 newdf
+
+head(dpF)
+
+require(dplyr)
+
+teamwiseAnalysis <- function(homeTeam, awayTeam){
+  dpF %>% filter(HomeTeam == homeTeam & AwayTeam == awayTeam) %>% summarise(FTHG_Avg = mean(FTHG))
+}
+
+for (i in home){
+  for (j in away){
+    print(i)
+    }
+}
+
+teamwiseAnalysis('Juventus','Napoli')
