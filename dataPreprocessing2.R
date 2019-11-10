@@ -34,10 +34,17 @@ for (i in length(home)){
 newdf
 
 head(dpF)
-
+require(esquisse)
 require(dplyr)
+require(ggplot2)
+require(tibble)
+require(Amelia)
 
-teamwiseAnalysis <- function(homeTeam, awayTeam){
+
+
+
+
+teamwiseAnalysis <- function(homeTeam, awayTeam)
   dpF %>% filter(HomeTeam == homeTeam & AwayTeam == awayTeam) %>% summarise(Home_Team = as.character(HomeTeam), Away_Team = as.character(AwayTeam),
                                                                             FTHG_Avg = mean(FTHG),
                                                                             FTAG_Avg = mean(FTAG),
