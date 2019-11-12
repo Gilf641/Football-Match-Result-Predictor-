@@ -65,4 +65,3 @@ avgData <- read.csv('averageStats_SeriaA.csv')
  
 # remove the Avg values for HTR and FTR
 avgData <- avgData[-c(6,9)]
-head(avgData)
