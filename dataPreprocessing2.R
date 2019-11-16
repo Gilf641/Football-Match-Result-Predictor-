@@ -6,12 +6,6 @@ SerieA_Data <- read.csv('SerieA.csv')
 
 tail(SerieA_Data)
 
-# create a copy 
-# 
-# sd <- SerieA_Data[c(-1,-2)]
-# sd
-# write.csv(sd,'dpFinal.csv')#,sep=',')
-
 dpF <- read.csv('dpFinal.csv')
 
 head(dpF)
