@@ -27,3 +27,4 @@ plot(avgData$Avg_FTHG~avgData$Avg_HS)
 with(avgData, text(avgData$Avg_FTHG~avgData$Avg_HS, labels = c(HomeTeam, AwayTeam), pos = 3, cex = 0.46))
 
 summary(avgData)
+glimpse(avgData)
