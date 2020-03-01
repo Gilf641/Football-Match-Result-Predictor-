@@ -19,7 +19,6 @@ str(SerieA_Data)
 table(SerieA_Data$HomeTeam == 'Napoli', SerieA_Data$FTR)
 
 # cross tab analysis
-
 xtabs(~FTHG, data = SerieA_Data )
 
 
@@ -65,23 +64,16 @@ JuveNapoli$AY <- mean(testJuveHome$AY)
 JuveNapoli$HR <- mean(testJuveHome$HR)
 JuveNapoli$AR <- mean(testJuveHome$AR)
 
-
-JuveNapoli
-
-
 head(SerieA_Data)
 
 #copy
 finalDF <- SerieA_Data
 
 # here I've taken season 2018/19 and 2019/20 as validation dataset and the rest as the training set
-
 # in this finalDF I'm gonna remove date column if incase you need any visualization stuff use SerieA_Data
-
 finalDF$Date <- NULL
 
 # create a list of vectors of teams
-
 ht <- as.array(unique(finalDF$HomeTeam))
 ht
 at <- as.array(unique(finalDF$AwayTeam))
@@ -106,17 +98,7 @@ tail(finalDF)
 f1 <- finalDF
 
 sayChristopher <- function(){}
-  
-
-
 f1 %>% filter(HomeTeam == 'Lazio' & AwayTeam == 'Roma') %>% summarise(mean(FTHG), mean(FTAG)) 
-
-
-
-
-
-
-
 
 
 
