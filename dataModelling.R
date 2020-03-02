@@ -3,7 +3,6 @@ require(caret)
 require(randomForest)
 require(Hmisc)
 require(tidyverse)
-require(VIM)
 require(ggplot2)
 require(esquisse)
 
