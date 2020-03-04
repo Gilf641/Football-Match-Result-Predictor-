@@ -4,24 +4,7 @@
 
 setwd('C:\\Users\\Rohan Shetty\\Desktop\\FootballDatasets\\Football-Match-Result-Predictor-\\Datasets')
 
-
-# #s1718 <- read.csv('SerieA 2017-18.csv')
-# 
-# head(s1718)
-# 
-# colnames(s1718)
-# 
-# # Remove the irrelevant columns
-# 
-# readNprocessIt <- function(fileName){
-#   rf <- read.csv(fileName)
-#   data <- as.data.frame(rf)
-#   df <- data[c(-1, -23:-65)]
-#   head(df)
-# }
-# readNprocessIt('SerieA 2017-18.csv')
-
-
+# custom function to read and preprocess the dataset files
 # for files after 06-07 season
 readNprocess <- function(fileName){
   rf <- read.csv(fileName)
@@ -72,11 +55,6 @@ readNprocess <- function(fileName){
 # nineteen20 <-readNprocess('SerieA 2019-20.csv')
 # 
 # 
-
-
-
-
-
 
 
 #comment 1(5:08 PM ) this func works fantastic, customize it according to the files like some have 60+ columns other 70+ so in that way
