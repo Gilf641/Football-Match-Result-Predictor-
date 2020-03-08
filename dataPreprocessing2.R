@@ -25,7 +25,7 @@ for (i in length(home)){
     
   }
 }
-newdf
+
 
 for (i in home){
   for (j in away){
@@ -36,7 +36,6 @@ for (i in home){
 # teamwiseAnalysis('Juventus','Napoli')
 # this is almost the right way but do some minor changes like changing the data structrure used or some minor ones!
 
-head(dpF)
 
 # READ THE FILE
 avgData <- read.csv('averageStats_SeriaA.csv')
