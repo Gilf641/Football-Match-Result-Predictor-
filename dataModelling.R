@@ -7,8 +7,6 @@ require(ggplot2)
 require(esquisse)
 
 # actually one can create a module and call it as a source 
-
-setwd('C:\\Users\\Rohan Shetty\\Desktop\\FootballDatasets\\Football-Match-Result-Predictor-\\Datasets')
 avgData <- read.csv('averageStats_SeriaA.csv')
 head(avgData)
 
