@@ -204,7 +204,6 @@ ggplot(awayWins) +
 # Total Shots
 
 #home shots
-
 hs <-  topHome %>%
  filter(FTR %in% "H")
 ggplot(hs) +
@@ -219,7 +218,6 @@ ggplot(hs) +
 
 
 #home shots on target
-
 hst <-  topHome %>%
   filter(FTR %in% "H")
 ggplot(hst) +
