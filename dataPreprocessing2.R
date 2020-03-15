@@ -1,6 +1,6 @@
 #read the entire SerieA dataset
 
-setwd('C:\\Users\\Rohan Shetty\\Desktop\\FootballDatasets\\Football-Match-Result-Predictor-\\Datasets')
+setwd('complete path...')
 
 SerieA_Data <- read.csv('SerieA.csv')
 
