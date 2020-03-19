@@ -123,7 +123,6 @@ require(esquisse)
 glimpse(SerieA_Data)
 
 #conv some variables to factor form
-
 SerieA_Data$FTAG <- as.factor(SerieA_Data$FTAG)
 SerieA_Data$FTHG <- as.factor(SerieA_Data$FTHG)
 SerieA_Data$HTAG <- as.factor(SerieA_Data$HTAG)
@@ -133,7 +132,6 @@ esquisse::esquisser(SerieA_Data)
 
 
 # FTR ViSualization( Home Games )
-
 SerieA_Data <- SerieA_Data %>%
  filter(!(HTR %in% ""))
 
@@ -202,7 +200,6 @@ ggplot(awayWins) +
 
 
 # Total Shots
-
 #home shots
 hs <-  topHome %>%
  filter(FTR %in% "H")
@@ -214,7 +211,6 @@ ggplot(hs) +
 # # insights
 # 1. Fiorentina, Inter, Juventus and Napoli have almost the same median no of shots at home
 # 2. Roma is leading at the top, whereas Atalanta, Genoa and Udinese have lower percentile of median num of shots at home.
-
 
 
 #home shots on target
