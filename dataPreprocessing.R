@@ -2,17 +2,14 @@
 
 #read a file and check how can you do the same using function
 
-setwd('C:\\Users\\Rohan Shetty\\Desktop\\FootballDatasets\\Football-Match-Result-Predictor-\\Datasets')
+setwd('path\to\the\datasets')
 
 # custom function to read and preprocess the dataset files
-# for files after 06-07 season
 readNprocess <- function(fileName){
   rf <- read.csv(fileName)
   data <- as.data.frame(rf)
   n <- ncol(data)
   df <- data[-c(1, 23:n)]
-  
-  
 }
 
 # 2007-08
