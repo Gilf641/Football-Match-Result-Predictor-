@@ -1,1 +1,2 @@
-# Football-Match-Result-Predictor-
+#SCORE10
+Football Score Predictor using R
