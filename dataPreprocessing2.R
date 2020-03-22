@@ -1,15 +1,10 @@
 #read the entire SerieA dataset
-
-setwd('complete path...')
-
 SerieA_Data <- read.csv('SerieA.csv')
-
 tail(SerieA_Data)
 
-dpF <- read.csv('dpFinal.csv')
+dpF <- read.csv('ppd.csv')
 
 head(dpF)
-
 home <- as.array(unique(dpF$HomeTeam))
 away <- as.array(unique(dpF$AwayTeam))
 
