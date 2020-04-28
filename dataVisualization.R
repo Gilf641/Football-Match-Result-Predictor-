@@ -1,3 +1,9 @@
+
+# load all the reqd libs
+require(psych)
+require(ggplot2)
+
+
 #read the entire SerieA dataset
 SerieA_Data <- read.csv('SerieA.csv')
 
@@ -6,11 +12,6 @@ head(SerieA_Data)
 #remove first column
 SerieA_Data <- SerieA_Data[-1]
 tail(SerieA_Data)
-
-# load all the reqd libs
-require(psych)
-require(ggplot2)
-
 str(SerieA_Data)
 table(SerieA_Data$HomeTeam == 'Napoli', SerieA_Data$FTR)
 
