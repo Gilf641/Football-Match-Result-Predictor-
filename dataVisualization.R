@@ -22,7 +22,6 @@ xtabs(~FTHG, data = SerieA_Data )
 #my next step is go according to the algorithm that you've written and do the same also write your SOP man
 require(dplyr)
 
-# I've taken Juventus vs Napoli for testing
 
 testData <- SerieA_Data %>% filter(HomeTeam == 'Juventus' & AwayTeam == 'Napoli' | HomeTeam == 'Napoli' & AwayTeam == 'Juventus')
 testData
